@@ -3,7 +3,7 @@ withCredentials([[
     credentialsId: '67e61857-c2be-4fc9-929c-0487f0b70191',
     accessKeyVariable: 'AWS_ACCESS_KEY_ID',
     secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
-]]) {
+]]) {}
     // Your AWS-related pipeline steps here
 
 
@@ -30,4 +30,4 @@ pipeline {
         
     }
 }
-}
+
