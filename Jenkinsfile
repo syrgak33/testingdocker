@@ -2,23 +2,21 @@ pipeline {
     agent any
 
     stages {
-        stage('Example') {
-            
+        stage('Checkout') {
             steps {
-                script {
-                    // Access AWS credentials using environment variables
-                 // withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: '67e61857-c2be-4fc9-929c-0487f0b70191', accessKeyVariable: 'AWS_ACCESS_KEY_ID', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
-                   withCredentials([<object of type com.cloudbees.jenkins.plugins.awscredentials.AmazonWebServicesCredentialsBinding>]) {
-                        bash '''
-                            # Your AWS CLI or AWS SDK commands using credentials here
-                            terraform init
-                            terraform apply --auto-approve
-                            # Example command to list S3 buckets
-                        '''
-                    }
-                }
+                git branch: 'main', credentialsId: 'b3ef7466-2dd7-47fc-8a1c-5fa5dca81277', url: 'https://github.com/syrgak33/testingdocker.git'
             }
         }
+        stage('Terraform init') {
+            steps {
+                sh 'terraform init'
+            }
+        }
+        stage('Terraform apply') {
+            steps {
+                sh 'terraform apply --auto-approve'
+            }
+        }
+        
     }
 }
-
