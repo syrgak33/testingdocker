@@ -5,7 +5,7 @@ withCredentials([[
     secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
 ]]) {
     // Your AWS-related pipeline steps here
-}
+
 
 
 pipeline {
@@ -29,4 +29,5 @@ pipeline {
         }
         
     }
+}
 }
