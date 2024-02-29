@@ -11,7 +11,7 @@ pipeline {
             steps {
                 script {
                     // Access AWS credentials using environment variables
-                 # withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: '67e61857-c2be-4fc9-929c-0487f0b70191', accessKeyVariable: 'AWS_ACCESS_KEY_ID', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
+                 // withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: '67e61857-c2be-4fc9-929c-0487f0b70191', accessKeyVariable: 'AWS_ACCESS_KEY_ID', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
                    withAWS(credentials: '67e61857-c2be-4fc9-929c-0487f0b70191', region: 'us-east-1')  
                         bash '''
                             # Your AWS CLI or AWS SDK commands using credentials here
