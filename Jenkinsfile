@@ -3,11 +3,7 @@ pipeline {
 
     stages {
         stage('Example') {
-            environment {
-                // Define any other environment variables you need
-                AWS_REGION = 'us-east-1'
-            }
-
+            
             steps {
                 script {
                     // Access AWS credentials using environment variables
